@@ -1,10 +1,10 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ChevronLeft, ChevronRight, Home, BookOpen, RotateCcw } from "lucide-react"
+import { ChevronLeft, ChevronRight, Home, BookOpen, RotateCcw, Download, Wifi, WifiOff } from "lucide-react"
 import prayersData from "@/data/prayers.json"
 
 interface PrayerVersion {
@@ -22,11 +22,11 @@ interface Prayer {
 }
 
 const categoryColors = {
-  opening: "bg-green-100 text-green-800 border-green-200",
-  recitation: "bg-blue-100 text-blue-800 border-blue-200",
-  movement: "bg-purple-100 text-purple-800 border-purple-200",
-  sitting: "bg-orange-100 text-orange-800 border-orange-200",
-  closing: "bg-red-100 text-red-800 border-red-200",
+  opening: "bg-amber-100 text-amber-800 border-amber-200",
+  recitation: "bg-orange-100 text-orange-800 border-orange-200",
+  movement: "bg-red-100 text-red-800 border-red-200",
+  sitting: "bg-yellow-100 text-yellow-800 border-yellow-200",
+  closing: "bg-rose-100 text-rose-800 border-rose-200",
 }
 
 const categoryNames = {
@@ -41,10 +41,63 @@ export default function PrayerGuide() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [currentVersionIndex, setCurrentVersionIndex] = useState(0)
   const [showOverview, setShowOverview] = useState(true)
+  const [isOnline, setIsOnline] = useState(true)
+  const [showInstallPrompt, setShowInstallPrompt] = useState(false)
+  const [deferredPrompt, setDeferredPrompt] = useState<any>(null)
   const prayers: Prayer[] = prayersData.prayers
 
   const currentPrayer = prayers[currentIndex]
   const currentVersion = currentPrayer?.versions[currentVersionIndex]
+
+  // Check online status
+  useEffect(() => {
+    setIsOnline(navigator.onLine)
+
+    const handleOnline = () => setIsOnline(true)
+    const handleOffline = () => setIsOnline(false)
+
+    window.addEventListener("online", handleOnline)
+    window.addEventListener("offline", handleOffline)
+
+    return () => {
+      window.removeEventListener("online", handleOnline)
+      window.removeEventListener("offline", handleOffline)
+    }
+  }, [])
+
+  // Handle PWA install prompt
+  useEffect(() => {
+    const handleBeforeInstallPrompt = (e: Event) => {
+      // Prevent Chrome 67 and earlier from automatically showing the prompt
+      e.preventDefault()
+      // Stash the event so it can be triggered later
+      setDeferredPrompt(e)
+      // Show install button
+      setShowInstallPrompt(true)
+    }
+
+    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt as any)
+
+    return () => {
+      window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt as any)
+    }
+  }, [])
+
+  const installApp = async () => {
+    if (!deferredPrompt) return
+
+    // Show the install prompt
+    deferredPrompt.prompt()
+
+    // Wait for the user to respond to the prompt
+    const { outcome } = await deferredPrompt.userChoice
+
+    // We no longer need the prompt
+    setDeferredPrompt(null)
+    setShowInstallPrompt(false)
+
+    console.log(`User ${outcome === "accepted" ? "accepted" : "dismissed"} the install prompt`)
+  }
 
   const nextPrayer = () => {
     setCurrentIndex((prev) => (prev + 1) % prayers.length)
@@ -72,14 +125,44 @@ export default function PrayerGuide() {
 
   if (showOverview) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 p-4">
+      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 p-4">
         <div className="max-w-md mx-auto">
           <div className="text-center mb-6">
             <div className="flex items-center justify-center mb-4">
-              <BookOpen className="w-8 h-8 text-green-600 mr-2" />
+              <BookOpen className="w-8 h-8 text-amber-600 mr-2" />
               <h1 className="text-2xl font-bold text-gray-800">Panduan Shalat</h1>
             </div>
             <p className="text-gray-600 text-sm">Bacaan dan doa dalam shalat wajib dengan berbagai versi</p>
+
+            {/* Online/Offline Status */}
+            <div className="flex justify-center mt-2">
+              <Badge
+                variant="outline"
+                className={`text-xs ${isOnline ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
+              >
+                {isOnline ? (
+                  <>
+                    <Wifi className="w-3 h-3 mr-1" /> Online
+                  </>
+                ) : (
+                  <>
+                    <WifiOff className="w-3 h-3 mr-1" /> Offline
+                  </>
+                )}
+              </Badge>
+            </div>
+
+            {/* Install PWA Button */}
+            {showInstallPrompt && (
+              <Button
+                onClick={installApp}
+                className="mt-4 bg-amber-500 hover:bg-amber-600 text-white flex items-center gap-2"
+                size="sm"
+              >
+                <Download className="w-4 h-4" />
+                Pasang Aplikasi
+              </Button>
+            )}
           </div>
 
           <div className="space-y-3">
@@ -124,7 +207,7 @@ export default function PrayerGuide() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
       {/* Header */}
       <div className="sticky top-0 bg-white/90 backdrop-blur-sm border-b border-gray-200 p-4 z-10">
         <div className="max-w-md mx-auto flex items-center justify-between">
@@ -142,12 +225,20 @@ export default function PrayerGuide() {
               </p>
             )}
           </div>
-          <Badge
-            variant="outline"
-            className={`text-xs ${categoryColors[currentPrayer.category as keyof typeof categoryColors]}`}
-          >
-            {categoryNames[currentPrayer.category as keyof typeof categoryNames]}
-          </Badge>
+          <div className="flex items-center gap-2">
+            <Badge
+              variant="outline"
+              className={`text-xs ${isOnline ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
+            >
+              {isOnline ? <Wifi className="w-3 h-3" /> : <WifiOff className="w-3 h-3" />}
+            </Badge>
+            <Badge
+              variant="outline"
+              className={`text-xs ${categoryColors[currentPrayer.category as keyof typeof categoryColors]}`}
+            >
+              {categoryNames[currentPrayer.category as keyof typeof categoryNames]}
+            </Badge>
+          </div>
         </div>
       </div>
 
@@ -169,7 +260,7 @@ export default function PrayerGuide() {
               {/* Arabic Text */}
               <div className="text-center">
                 <h3 className="text-sm font-semibold text-gray-600 mb-3">Arab</h3>
-                <p className="text-right text-2xl leading-loose text-gray-800 font-arabic p-4 bg-gray-50 rounded-lg">
+                <p className="text-right text-2xl leading-loose text-gray-800 font-arabic p-4 bg-amber-50 rounded-lg">
                   {currentVersion.arabic}
                 </p>
               </div>
@@ -177,7 +268,7 @@ export default function PrayerGuide() {
               {/* Transliteration */}
               <div>
                 <h3 className="text-sm font-semibold text-gray-600 mb-3">Latin</h3>
-                <p className="text-lg leading-relaxed text-gray-700 italic p-4 bg-blue-50 rounded-lg">
+                <p className="text-lg leading-relaxed text-gray-700 italic p-4 bg-orange-50 rounded-lg">
                   {currentVersion.transliteration}
                 </p>
               </div>
@@ -185,7 +276,7 @@ export default function PrayerGuide() {
               {/* Translation */}
               <div>
                 <h3 className="text-sm font-semibold text-gray-600 mb-3">Arti</h3>
-                <p className="text-base leading-relaxed text-gray-800 p-4 bg-green-50 rounded-lg">
+                <p className="text-base leading-relaxed text-gray-800 p-4 bg-yellow-50 rounded-lg">
                   {currentVersion.translation}
                 </p>
               </div>
@@ -208,7 +299,7 @@ export default function PrayerGuide() {
                 <div
                   key={index}
                   className={`w-2 h-2 rounded-full transition-colors ${
-                    index === currentVersionIndex ? "bg-blue-600" : "bg-gray-300"
+                    index === currentVersionIndex ? "bg-orange-600" : "bg-gray-300"
                   }`}
                 />
               ))}
@@ -240,7 +331,7 @@ export default function PrayerGuide() {
               <div
                 key={index}
                 className={`w-2 h-2 rounded-full transition-colors ${
-                  index === currentIndex ? "bg-green-600" : "bg-gray-300"
+                  index === currentIndex ? "bg-amber-600" : "bg-gray-300"
                 }`}
               />
             ))}
