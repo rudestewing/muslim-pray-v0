@@ -4,73 +4,184 @@
       "id": "takbiratul-ihram",
       "title": "Takbiratul Ihram",
       "category": "opening",
-      "arabic": "اللَّهُ أَكْبَرُ",
-      "transliteration": "Allahu akbar",
-      "translation": "Allah Maha Besar"
+      "versions": [
+        {
+          "name": "Standar",
+          "arabic": "اللَّهُ أَكْبَرُ",
+          "transliteration": "Allahu akbar",
+          "translation": "Allah Maha Besar"
+        }
+      ]
     },
     {
       "id": "doa-iftitah",
       "title": "Doa Iftitah",
       "category": "opening",
-      "arabic": "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ وَتَبَارَكَ اسْمُكَ وَتَعَالَى جَدُّكَ وَلَا إِلَهَ غَيْرُكَ",
-      "transliteration": "Subhanakallahumma wabihamdika watabarokasmuka wata'ala jadduka wala ilaha ghairuka",
-      "translation": "Maha Suci Engkau ya Allah, dengan memuji-Mu, dan berkah nama-Mu, dan tinggi keagungan-Mu, dan tidak ada Tuhan selain Engkau"
+      "versions": [
+        {
+          "name": "Versi Pendek",
+          "arabic": "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ وَتَبَارَكَ اسْمُكَ وَتَعَالَى جَدُّكَ وَلَا إِلَهَ غَيْرُكَ",
+          "transliteration": "Subhanakallahumma wabihamdika watabarokasmuka wata'ala jadduka wala ilaha ghairuka",
+          "translation": "Maha Suci Engkau ya Allah, dengan memuji-Mu, dan berkah nama-Mu, dan tinggi keagungan-Mu, dan tidak ada Tuhan selain Engkau"
+        },
+        {
+          "name": "Versi Panjang",
+          "arabic": "وَجَّهْتُ وَجْهِيَ لِلَّذِي فَطَرَ السَّمَاوَاتِ وَالْأَرْضَ حَنِيفًا وَمَا أَنَا مِنَ الْمُشْرِكِينَ ۝ إِنَّ صَلَاتِي وَنُسُكِي وَمَحْيَايَ وَمَمَاتِي لِلَّهِ رَبِّ الْعَالَمِينَ ۝ لَا شَرِيكَ لَهُ وَبِذَلِكَ أُمِرْتُ وَأَنَا مِنَ الْمُسْلِمِينَ",
+          "transliteration": "Wajjahtu wajhiya lilladzii fataras samaawaati wal ardha haniifan wa maa ana minal musyrikiin. Inna shalaatii wa nusukii wa mahyaaya wa mamaatii lillaahi rabbil 'alamiin. Laa syariika lahu wa bidzaalika umirtu wa ana minal muslimiin",
+          "translation": "Aku hadapkan wajahku kepada Allah yang menciptakan langit dan bumi dengan lurus, dan aku bukanlah termasuk orang-orang yang mempersekutukan Allah. Sesungguhnya shalatku, ibadahku, hidupku dan matiku hanya untuk Allah, Tuhan semesta alam. Tidak ada sekutu bagi-Nya. Dan dengan yang demikian itulah aku diperintahkan. Dan aku adalah termasuk orang-orang yang berserah diri"
+        }
+      ]
     },
     {
       "id": "al-fatihah",
       "title": "Al-Fatihah",
       "category": "recitation",
-      "arabic": "بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ ۝ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ۝ الرَّحْمَنِ الرَّحِيمِ ۝ مَالِكِ يَوْمِ الدِّينِ ۝ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ۝ اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ۝ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ",
-      "transliteration": "Bismillahir rahmanir rahiim. Alhamdulillahi rabbil 'alamiin. Ar rahmanir rahiim. Maliki yaumiddiin. Iyyaka na'budu wa iyyaka nasta'iin. Ihdinash shiratal mustaqiim. Shiratalladzina an'amta 'alaihim ghairil maghdhuubi 'alaihim waladh dhalliin",
-      "translation": "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang. Segala puji bagi Allah, Tuhan seluruh alam. Yang Maha Pengasih, Maha Penyayang. Pemilik hari pembalasan. Hanya kepada Engkaulah kami menyembah dan hanya kepada Engkaulah kami mohon pertolongan. Tunjukilah kami jalan yang lurus. Yaitu jalan orang-orang yang telah Engkau beri nikmat kepadanya; bukan jalan mereka yang dimurkai, dan bukan pula jalan mereka yang sesat"
+      "versions": [
+        {
+          "name": "Al-Fatihah",
+          "arabic": "بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ ۝ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ۝ الرَّحْمَنِ الرَّحِيمِ ۝ مَالِكِ يَوْمِ الدِّينِ ۝ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ۝ اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ۝ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ",
+          "transliteration": "Bismillahir rahmanir rahiim. Alhamdulillahi rabbil 'alamiin. Ar rahmanir rahiim. Maliki yaumiddiin. Iyyaka na'budu wa iyyaka nasta'iin. Ihdinash shiratal mustaqiim. Shiratalladzina an'amta 'alaihim ghairil maghdhuubi 'alaihim waladh dhalliin",
+          "translation": "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang. Segala puji bagi Allah, Tuhan seluruh alam. Yang Maha Pengasih, Maha Penyayang. Pemilik hari pembalasan. Hanya kepada Engkaulah kami menyembah dan hanya kepada Engkaulah kami mohon pertolongan. Tunjukilah kami jalan yang lurus. Yaitu jalan orang-orang yang telah Engkau beri nikmat kepadanya; bukan jalan mereka yang dimurkai, dan bukan pula jalan mereka yang sesat"
+        },
+        {
+          "name": "Al-Fatihah + Amiin",
+          "arabic": "بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ ۝ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ۝ الرَّحْمَنِ الرَّحِيمِ ۝ مَالِكِ يَوْمِ الدِّينِ ۝ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ۝ اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ۝ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ ۝ آمِينَ",
+          "transliteration": "Bismillahir rahmanir rahiim. Alhamdulillahi rabbil 'alamiin. Ar rahmanir rahiim. Maliki yaumiddiin. Iyyaka na'budu wa iyyaka nasta'iin. Ihdinash shiratal mustaqiim. Shiratalladzina an'amta 'alaihim ghairil maghdhuubi 'alaihim waladh dhalliin. Aamiin",
+          "translation": "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang. Segala puji bagi Allah, Tuhan seluruh alam. Yang Maha Pengasih, Maha Penyayang. Pemilik hari pembalasan. Hanya kepada Engkaulah kami menyembah dan hanya kepada Engkaulah kami mohon pertolongan. Tunjukilah kami jalan yang lurus. Yaitu jalan orang-orang yang telah Engkau beri nikmat kepadanya; bukan jalan mereka yang dimurkai, dan bukan pula jalan mereka yang sesat. Aamiin"
+        }
+      ]
     },
     {
       "id": "ruku",
       "title": "Doa Ruku'",
       "category": "movement",
-      "arabic": "سُبْحَانَ رَبِّيَ الْعَظِيمِ وَبِحَمْدِهِ",
-      "transliteration": "Subhana rabbiyal 'azhiimi wabihamdih",
-      "translation": "Maha Suci Tuhanku Yang Maha Agung, dengan memuji-Nya"
+      "versions": [
+        {
+          "name": "Versi 1 (Pendek)",
+          "arabic": "سُبْحَانَ رَبِّيَ الْعَظِيمِ",
+          "transliteration": "Subhana rabbiyal 'azhiim",
+          "translation": "Maha Suci Tuhanku Yang Maha Agung"
+        },
+        {
+          "name": "Versi 2 (Dengan Pujian)",
+          "arabic": "سُبْحَانَ رَبِّيَ الْعَظِيمِ وَبِحَمْدِهِ",
+          "transliteration": "Subhana rabbiyal 'azhiimi wabihamdih",
+          "translation": "Maha Suci Tuhanku Yang Maha Agung, dengan memuji-Nya"
+        },
+        {
+          "name": "Versi 3 (Panjang)",
+          "arabic": "سُبْحَانَكَ اللَّهُمَّ رَبَّنَا وَبِحَمْدِكَ اللَّهُمَّ اغْفِرْ لِي",
+          "transliteration": "Subhanakallahumma rabbana wabihamdika allahummagh firli",
+          "translation": "Maha Suci Engkau ya Allah, Tuhan kami, dengan memuji-Mu. Ya Allah, ampunilah aku"
+        }
+      ]
     },
     {
       "id": "iktidal",
       "title": "I'tidal",
       "category": "movement",
-      "arabic": "سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ، رَبَّنَا وَلَكَ الْحَمْدُ",
-      "transliteration": "Sami'allahu liman hamidah, rabbana walakal hamdu",
-      "translation": "Allah mendengar orang yang memuji-Nya, ya Tuhan kami, bagi-Mu segala puji"
+      "versions": [
+        {
+          "name": "Versi 1",
+          "arabic": "سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ",
+          "transliteration": "Sami'allahu liman hamidah",
+          "translation": "Allah mendengar orang yang memuji-Nya"
+        },
+        {
+          "name": "Versi 2 (Lengkap)",
+          "arabic": "سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ، رَبَّنَا وَلَكَ الْحَمْدُ",
+          "transliteration": "Sami'allahu liman hamidah, rabbana walakal hamdu",
+          "translation": "Allah mendengar orang yang memuji-Nya, ya Tuhan kami, bagi-Mu segala puji"
+        },
+        {
+          "name": "Versi 3 (Panjang)",
+          "arabic": "رَبَّنَا وَلَكَ الْحَمْدُ حَمْدًا كَثِيرًا طَيِّبًا مُبَارَكًا فِيهِ",
+          "transliteration": "Rabbana walakal hamdu hamdan katsiiran thayyiban mubarakan fiih",
+          "translation": "Ya Tuhan kami, bagi-Mu segala puji, pujian yang banyak, baik, dan penuh berkah"
+        }
+      ]
     },
     {
       "id": "sujud",
       "title": "Doa Sujud",
       "category": "movement",
-      "arabic": "سُبْحَانَ رَبِّيَ الْأَعْلَى وَبِحَمْدِهِ",
-      "transliteration": "Subhana rabbiyal a'la wabihamdih",
-      "translation": "Maha Suci Tuhanku Yang Maha Tinggi, dengan memuji-Nya"
+      "versions": [
+        {
+          "name": "Versi 1 (Pendek)",
+          "arabic": "سُبْحَانَ رَبِّيَ الْأَعْلَى",
+          "transliteration": "Subhana rabbiyal a'la",
+          "translation": "Maha Suci Tuhanku Yang Maha Tinggi"
+        },
+        {
+          "name": "Versi 2 (Dengan Pujian)",
+          "arabic": "سُبْحَانَ رَبِّيَ الْأَعْلَى وَبِحَمْدِهِ",
+          "transliteration": "Subhana rabbiyal a'la wabihamdih",
+          "translation": "Maha Suci Tuhanku Yang Maha Tinggi, dengan memuji-Nya"
+        },
+        {
+          "name": "Versi 3 (Panjang)",
+          "arabic": "سُبْحَانَكَ اللَّهُمَّ رَبَّنَا وَبِحَمْدِكَ اللَّهُمَّ اغْفِرْ لِي",
+          "transliteration": "Subhanakallahumma rabbana wabihamdika allahummagh firli",
+          "translation": "Maha Suci Engkau ya Allah, Tuhan kami, dengan memuji-Mu. Ya Allah, ampunilah aku"
+        }
+      ]
     },
     {
       "id": "tahiyyat-awal",
       "title": "Tahiyyat Awal",
       "category": "sitting",
-      "arabic": "التَّحِيَّاتُ لِلَّهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ",
-      "transliteration": "Attahiyyatu lillahi wash shalawatu wath thayyibatu. Assalamu 'alaika ayyuhan nabiyyu wa rahmatullahi wa barakatuh. Assalamu 'alaina wa 'ala 'ibadillahish shalihin. Asyhadu alla ilaha illallahu wa asyhadu anna Muhammadan rasulullah",
-      "translation": "Segala penghormatan, keberkahan, dan kebaikan hanya bagi Allah. Semoga keselamatan, rahmat Allah, dan berkah-Nya tercurah kepadamu wahai Nabi. Semoga keselamatan tercurah kepada kami dan hamba-hamba Allah yang shaleh. Aku bersaksi bahwa tidak ada Tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah utusan Allah"
+      "versions": [
+        {
+          "name": "Versi Ibn Mas'ud",
+          "arabic": "التَّحِيَّاتُ لِلَّهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ",
+          "transliteration": "Attahiyyatu lillahi wash shalawatu wath thayyibatu. Assalamu 'alaika ayyuhan nabiyyu wa rahmatullahi wa barakatuh. Assalamu 'alaina wa 'ala 'ibadillahish shalihin. Asyhadu alla ilaha illallahu wa asyhadu anna Muhammadan 'abduhu wa rasuluh",
+          "translation": "Segala penghormatan, keberkahan, dan kebaikan hanya bagi Allah. Semoga keselamatan, rahmat Allah, dan berkah-Nya tercurah kepadamu wahai Nabi. Semoga keselamatan tercurah kepada kami dan hamba-hamba Allah yang shaleh. Aku bersaksi bahwa tidak ada Tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah hamba dan utusan-Nya"
+        },
+        {
+          "name": "Versi Abu Musa",
+          "arabic": "التَّحِيَّاتُ الطَّيِّبَاتُ الصَّلَوَاتُ لِلَّهِ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ",
+          "transliteration": "Attahiyyatu thayyibatu shalawatu lillah. Assalamu 'alaika ayyuhan nabiyyu wa rahmatullahi wa barakatuh. Assalamu 'alaina wa 'ala 'ibadillahish shalihin. Asyhadu alla ilaha illallahu wa asyhadu anna Muhammadan rasulullah",
+          "translation": "Segala penghormatan yang baik dan shalawat adalah untuk Allah. Semoga keselamatan, rahmat Allah, dan berkah-Nya tercurah kepadamu wahai Nabi. Semoga keselamatan tercurah kepada kami dan hamba-hamba Allah yang shaleh. Aku bersaksi bahwa tidak ada Tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah utusan Allah"
+        }
+      ]
     },
     {
       "id": "tahiyyat-akhir",
       "title": "Tahiyyat Akhir",
       "category": "sitting",
-      "arabic": "التَّحِيَّاتُ لِلَّهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ، اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ، اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ",
-      "transliteration": "Attahiyyatu lillahi wash shalawatu wath thayyibatu. Assalamu 'alaika ayyuhan nabiyyu wa rahmatullahi wa barakatuh. Assalamu 'alaina wa 'ala 'ibadillahish shalihin. Asyhadu alla ilaha illallahu wa asyhadu anna Muhammadan rasulullah. Allahumma shalli 'ala Muhammad wa 'ala ali Muhammad kama shallaita 'ala Ibrahim wa 'ala ali Ibrahim innaka hamidum majid. Allahumma barik 'ala Muhammad wa 'ala ali Muhammad kama barakta 'ala Ibrahim wa 'ala ali Ibrahim innaka hamidum majid",
-      "translation": "Segala penghormatan, keberkahan, dan kebaikan hanya bagi Allah. Semoga keselamatan, rahmat Allah, dan berkah-Nya tercurah kepadamu wahai Nabi. Semoga keselamatan tercurah kepada kami dan hamba-hamba Allah yang shaleh. Aku bersaksi bahwa tidak ada Tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah utusan Allah. Ya Allah, limpahkanlah shalawat kepada Muhammad dan keluarga Muhammad sebagaimana Engkau telah melimpahkan shalawat kepada Ibrahim dan keluarga Ibrahim. Sesungguhnya Engkau Maha Terpuji lagi Maha Mulia. Ya Allah, limpahkanlah berkah kepada Muhammad dan keluarga Muhammad sebagaimana Engkau telah melimpahkan berkah kepada Ibrahim dan keluarga Ibrahim. Sesungguhnya Engkau Maha Terpuji lagi Maha Mulia"
+      "versions": [
+        {
+          "name": "Versi Lengkap",
+          "arabic": "التَّحِيَّاتُ لِلَّهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ، اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ، اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ",
+          "transliteration": "Attahiyyatu lillahi wash shalawatu wath thayyibatu. Assalamu 'alaika ayyuhan nabiyyu wa rahmatullahi wa barakatuh. Assalamu 'alaina wa 'ala 'ibadillahish shalihin. Asyhadu alla ilaha illallahu wa asyhadu anna Muhammadan 'abduhu wa rasuluh. Allahumma shalli 'ala Muhammad wa 'ala ali Muhammad kama shallaita 'ala Ibrahim wa 'ala ali Ibrahim innaka hamidum majid. Allahumma barik 'ala Muhammad wa 'ala ali Muhammad kama barakta 'ala Ibrahim wa 'ala ali Ibrahim innaka hamidum majid",
+          "translation": "Segala penghormatan, keberkahan, dan kebaikan hanya bagi Allah. Semoga keselamatan, rahmat Allah, dan berkah-Nya tercurah kepadamu wahai Nabi. Semoga keselamatan tercurah kepada kami dan hamba-hamba Allah yang shaleh. Aku bersaksi bahwa tidak ada Tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah hamba dan utusan-Nya. Ya Allah, limpahkanlah shalawat kepada Muhammad dan keluarga Muhammad sebagaimana Engkau telah melimpahkan shalawat kepada Ibrahim dan keluarga Ibrahim. Sesungguhnya Engkau Maha Terpuji lagi Maha Mulia. Ya Allah, limpahkanlah berkah kepada Muhammad dan keluarga Muhammad sebagaimana Engkau telah melimpahkan berkah kepada Ibrahim dan keluarga Ibrahim. Sesungguhnya Engkau Maha Terpuji lagi Maha Mulia"
+        }
+      ]
     },
     {
       "id": "salam",
       "title": "Salam",
       "category": "closing",
-      "arabic": "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ",
-      "transliteration": "Assalamu 'alaikum wa rahmatullah",
-      "translation": "Semoga keselamatan dan rahmat Allah tercurah kepada kalian"
+      "versions": [
+        {
+          "name": "Salam Kanan",
+          "arabic": "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ",
+          "transliteration": "Assalamu 'alaikum wa rahmatullah",
+          "translation": "Semoga keselamatan dan rahmat Allah tercurah kepada kalian (salam ke kanan)"
+        },
+        {
+          "name": "Salam Kiri",
+          "arabic": "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ",
+          "transliteration": "Assalamu 'alaikum wa rahmatullah",
+          "translation": "Semoga keselamatan dan rahmat Allah tercurah kepada kalian (salam ke kiri)"
+        },
+        {
+          "name": "Salam Lengkap",
+          "arabic": "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ",
+          "transliteration": "Assalamu 'alaikum wa rahmatullahi wa barakatuh",
+          "translation": "Semoga keselamatan, rahmat Allah, dan berkah-Nya tercurah kepada kalian"
+        }
+      ]
     }
   ]
 }

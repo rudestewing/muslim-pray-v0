@@ -4,16 +4,21 @@ import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ChevronLeft, ChevronRight, Home, BookOpen } from "lucide-react"
+import { ChevronLeft, ChevronRight, Home, BookOpen, RotateCcw } from "lucide-react"
 import prayersData from "@/data/prayers.json"
+
+interface PrayerVersion {
+  name: string
+  arabic: string
+  transliteration: string
+  translation: string
+}
 
 interface Prayer {
   id: string
   title: string
   category: string
-  arabic: string
-  transliteration: string
-  translation: string
+  versions: PrayerVersion[]
 }
 
 const categoryColors = {
@@ -34,21 +39,34 @@ const categoryNames = {
 
 export default function PrayerGuide() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentVersionIndex, setCurrentVersionIndex] = useState(0)
   const [showOverview, setShowOverview] = useState(true)
   const prayers: Prayer[] = prayersData.prayers
 
   const currentPrayer = prayers[currentIndex]
+  const currentVersion = currentPrayer?.versions[currentVersionIndex]
 
   const nextPrayer = () => {
     setCurrentIndex((prev) => (prev + 1) % prayers.length)
+    setCurrentVersionIndex(0) // Reset to first version when changing prayer
   }
 
   const prevPrayer = () => {
     setCurrentIndex((prev) => (prev - 1 + prayers.length) % prayers.length)
+    setCurrentVersionIndex(0) // Reset to first version when changing prayer
+  }
+
+  const nextVersion = () => {
+    setCurrentVersionIndex((prev) => (prev + 1) % currentPrayer.versions.length)
+  }
+
+  const prevVersion = () => {
+    setCurrentVersionIndex((prev) => (prev - 1 + currentPrayer.versions.length) % currentPrayer.versions.length)
   }
 
   const goToPrayer = (index: number) => {
     setCurrentIndex(index)
+    setCurrentVersionIndex(0)
     setShowOverview(false)
   }
 
@@ -61,7 +79,7 @@ export default function PrayerGuide() {
               <BookOpen className="w-8 h-8 text-green-600 mr-2" />
               <h1 className="text-2xl font-bold text-gray-800">Panduan Shalat</h1>
             </div>
-            <p className="text-gray-600 text-sm">Bacaan dan doa dalam shalat wajib</p>
+            <p className="text-gray-600 text-sm">Bacaan dan doa dalam shalat wajib dengan berbagai versi</p>
           </div>
 
           <div className="space-y-3">
@@ -81,10 +99,17 @@ export default function PrayerGuide() {
                         >
                           {categoryNames[prayer.category as keyof typeof categoryNames]}
                         </Badge>
+                        {prayer.versions.length > 1 && (
+                          <Badge variant="secondary" className="text-xs">
+                            {prayer.versions.length} versi
+                          </Badge>
+                        )}
                       </div>
                       <h3 className="font-semibold text-gray-800 mb-1">{prayer.title}</h3>
                       <p className="text-right text-lg text-gray-700 font-arabic leading-relaxed">
-                        {prayer.arabic.length > 50 ? `${prayer.arabic.substring(0, 50)}...` : prayer.arabic}
+                        {prayer.versions[0].arabic.length > 50
+                          ? `${prayer.versions[0].arabic.substring(0, 50)}...`
+                          : prayer.versions[0].arabic}
                       </p>
                     </div>
                     <ChevronRight className="w-5 h-5 text-gray-400 ml-2" />
@@ -111,6 +136,11 @@ export default function PrayerGuide() {
             <p className="text-sm text-gray-600">
               {currentIndex + 1} dari {prayers.length}
             </p>
+            {currentPrayer.versions.length > 1 && (
+              <p className="text-xs text-gray-500">
+                Versi {currentVersionIndex + 1} dari {currentPrayer.versions.length}
+              </p>
+            )}
           </div>
           <Badge
             variant="outline"
@@ -122,18 +152,25 @@ export default function PrayerGuide() {
       </div>
 
       {/* Content */}
-      <div className="p-4 pb-24">
+      <div className="p-4 pb-32">
         <div className="max-w-md mx-auto">
           <Card className="mb-6">
             <CardHeader className="text-center pb-4">
               <CardTitle className="text-xl text-gray-800">{currentPrayer.title}</CardTitle>
+              {currentPrayer.versions.length > 1 && (
+                <div className="flex items-center justify-center gap-2 mt-2">
+                  <Badge variant="outline" className="text-sm">
+                    {currentVersion.name}
+                  </Badge>
+                </div>
+              )}
             </CardHeader>
             <CardContent className="space-y-6">
               {/* Arabic Text */}
               <div className="text-center">
                 <h3 className="text-sm font-semibold text-gray-600 mb-3">Arab</h3>
                 <p className="text-right text-2xl leading-loose text-gray-800 font-arabic p-4 bg-gray-50 rounded-lg">
-                  {currentPrayer.arabic}
+                  {currentVersion.arabic}
                 </p>
               </div>
 
@@ -141,7 +178,7 @@ export default function PrayerGuide() {
               <div>
                 <h3 className="text-sm font-semibold text-gray-600 mb-3">Latin</h3>
                 <p className="text-lg leading-relaxed text-gray-700 italic p-4 bg-blue-50 rounded-lg">
-                  {currentPrayer.transliteration}
+                  {currentVersion.transliteration}
                 </p>
               </div>
 
@@ -149,7 +186,7 @@ export default function PrayerGuide() {
               <div>
                 <h3 className="text-sm font-semibold text-gray-600 mb-3">Arti</h3>
                 <p className="text-base leading-relaxed text-gray-800 p-4 bg-green-50 rounded-lg">
-                  {currentPrayer.translation}
+                  {currentVersion.translation}
                 </p>
               </div>
             </CardContent>
@@ -157,7 +194,35 @@ export default function PrayerGuide() {
         </div>
       </div>
 
-      {/* Navigation */}
+      {/* Version Navigation (if multiple versions exist) */}
+      {currentPrayer.versions.length > 1 && (
+        <div className="fixed bottom-16 left-0 right-0 bg-white/90 backdrop-blur-sm border-t border-gray-200 p-3">
+          <div className="max-w-md mx-auto flex items-center justify-between">
+            <Button variant="outline" size="sm" onClick={prevVersion} className="flex items-center gap-2">
+              <RotateCcw className="w-4 h-4" />
+              Versi Lain
+            </Button>
+
+            <div className="flex gap-1">
+              {currentPrayer.versions.map((_, index) => (
+                <div
+                  key={index}
+                  className={`w-2 h-2 rounded-full transition-colors ${
+                    index === currentVersionIndex ? "bg-blue-600" : "bg-gray-300"
+                  }`}
+                />
+              ))}
+            </div>
+
+            <Button variant="outline" size="sm" onClick={nextVersion} className="flex items-center gap-2">
+              Versi Lain
+              <RotateCcw className="w-4 h-4" />
+            </Button>
+          </div>
+        </div>
+      )}
+
+      {/* Main Navigation */}
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4">
         <div className="max-w-md mx-auto flex items-center justify-between">
           <Button
